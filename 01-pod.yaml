@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx
+  labels:
+    project: roboshop
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  # kubectl label node <node-name> project=roboshop
+  nodeSelector:
+    project: roboshop
