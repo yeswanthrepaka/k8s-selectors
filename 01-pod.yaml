@@ -12,4 +12,4 @@ spec:
     image: nginx
   # kubectl label node <node-name> project=roboshop
   nodeSelector:
-    project: roboshop
+    project: roboshopp
