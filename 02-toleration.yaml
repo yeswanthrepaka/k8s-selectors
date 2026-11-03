@@ -10,10 +10,10 @@ spec:
   - name: nginx
     image: nginx
   nodeSelector:
-    project: roboshop # I tainted this node so we need to use toleration
-  toleration:
+    project: roboshop # I tainted this node so we need to use tolerations
+  tolerations:
   - key: "project"
-    operator: "equal"
+    operator: "Equal"
     value: "roboshop"
     effect: "NoExecute"
   # This container will create in this tainted node now. 
