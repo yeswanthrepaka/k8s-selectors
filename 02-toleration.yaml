@@ -1,0 +1,19 @@
+# kubectl taint node <node> project=roboshop:NoExecute
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx-toleration
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  nodeSelector:
+    project: roboshop # I tainted this node so we need to use toleration
+  toleration:
+  - key: "project"
+    operator: "equal"
+    value: "roboshop"
+    effect: "NoExecute"
+  # This container will create in this tainted node now. 
